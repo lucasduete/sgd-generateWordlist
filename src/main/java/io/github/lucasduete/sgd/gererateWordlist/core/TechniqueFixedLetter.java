@@ -4,12 +4,13 @@ import io.github.lucasduete.sgd.gererateWordlist.factories.WordlistFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TechniqueFixedLetter implements GenerateTechnique {
 
     @Override
-    public String[] generateWordlist() {
+    public List<String> generateWordlist() {
         char[] textoChar = new char[0];
 
         try {
@@ -18,7 +19,7 @@ public class TechniqueFixedLetter implements GenerateTechnique {
         } catch (IOException ex) {
 
             ex.printStackTrace();
-            return new String[1];
+            return Collections.emptyList();
         }
 
 
@@ -27,7 +28,7 @@ public class TechniqueFixedLetter implements GenerateTechnique {
         for (int i = 0; i < (textoChar.length - 7); i++)
             wordlist.add(generateString(textoChar, i, 8));
 
-        return (String[]) wordlist.toArray();
+        return wordlist;
     }
 
     private char[] wordlistToCharArray() throws IOException {

@@ -3,14 +3,17 @@ package io.github.lucasduete.sgd.gererateWordlist.core;
 import io.github.lucasduete.sgd.gererateWordlist.factories.WordlistFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class TechniqueColapseWordlists implements GenerateTechnique {
 
     @Override
-    public String[] generateWordlist() {
+    public List<String> generateWordlist() {
         WordlistFactory wordlistFactory = new WordlistFactory();
 
-        String[] wordlist1 = new String[1];
+        String[] wordlist1;
 
         try {
 
@@ -18,34 +21,20 @@ public class TechniqueColapseWordlists implements GenerateTechnique {
         } catch (IOException ex) {
 
             ex.printStackTrace();
-            return wordlist1;
+            return Collections.EMPTY_LIST;
         }
 
         String[] wordlist2 = wordlist1;
-        String[] finalWordlist = new String[wordlist1.length*wordlist2.length];
+        List<String> finalWordlist = new ArrayList<>();
 
-        int c = 0;
         for (int i = 0; i < wordlist1.length; i++) {
 
             for (int j = 0; j < wordlist2.length; j++) {
 
-                finalWordlist[c] = wordlist1[i] + wordlist2[j];
-
-                if (finalWordlist[c].length() != 8) finalWordlist[c] = null;
-
-                c++;
+                String word = wordlist1[i] + wordlist2[j];
+                if (word.length() == 8) finalWordlist.add(word);
             }
         }
-
-        int count = 0;
-        for (String word : finalWordlist) {
-            if (word != null) {
-                System.out.println(word);
-                count++;
-            }
-        }
-
-        System.out.println("Wordlist total: " + count);
 
         return finalWordlist;
     }
