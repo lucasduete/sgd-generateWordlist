@@ -1,4 +1,4 @@
-package io.github.lucasduete.sgd.gererateWordlist.core;
+package io.github.lucasduete.sgd.gererateWordlist.factories;
 
 import io.github.lucasduete.sgd.gererateWordlist.Filter;
 import io.github.lucasduete.sgd.gererateWordlist.filters.FilterAccentuation;
