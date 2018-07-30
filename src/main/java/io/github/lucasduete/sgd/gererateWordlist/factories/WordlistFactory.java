@@ -3,6 +3,7 @@ package io.github.lucasduete.sgd.gererateWordlist.factories;
 import io.github.lucasduete.sgd.gererateWordlist.Filter;
 import io.github.lucasduete.sgd.gererateWordlist.filters.FilterAccentuation;
 import io.github.lucasduete.sgd.gererateWordlist.filters.FilterLowerCase;
+import io.github.lucasduete.sgd.gererateWordlist.filters.FilterRepeatedWords;
 import io.github.lucasduete.sgd.gererateWordlist.filters.FilterSpecial;
 
 import java.io.*;
@@ -33,6 +34,9 @@ public class WordlistFactory {
 
         // Filtering - replace ABC.. by abc...
         filter = new FilterLowerCase();
+        wordlist = filter.filtering(wordlist);
+
+        filter = new FilterRepeatedWords();
         wordlist = filter.filtering(wordlist);
 
         return wordlist;
