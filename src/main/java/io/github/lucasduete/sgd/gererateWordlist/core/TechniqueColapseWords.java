@@ -3,7 +3,6 @@ package io.github.lucasduete.sgd.gererateWordlist.core;
 import io.github.lucasduete.sgd.gererateWordlist.factories.WordlistFactory;
 
 import java.io.IOException;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -103,6 +102,61 @@ public class TechniqueColapseWords implements GenerateTechnique {
                     wordsLength3.forEach(word3 -> {
                         finalWordlist.add(word5 + word3);
                         finalWordlist.add(word3 + word5);
+                    })
+            );
+
+        if (wordsLength5.size() > 0 && wordsLength2.size() > 0 && wordsLength1.size() > 0)
+            wordsLength5.forEach(word5 -> {
+                wordsLength2.forEach(word2 -> {
+                    wordsLength1.forEach(word1 -> {
+                        finalWordlist.add(word5 + word2 + word1);
+                        finalWordlist.add(word5 + word1 + word2);
+                        finalWordlist.add(word2 + word5 + word1);
+                        finalWordlist.add(word2 + word1 + word5);
+                        finalWordlist.add(word1 + word2 + word5);
+                        finalWordlist.add(word2 + word1 + word5);
+                    });
+                });
+            });
+
+        if (wordsLength5.size() > 0 && wordsLength1.size() >= 3)
+            wordsLength5.forEach(word5 ->
+                    wordsLength1.forEach(word11 -> {
+                        wordsLength1.forEach(word12 -> {
+                            wordsLength1.forEach(word13 -> {
+                                finalWordlist.add(word5 + word11 + word12 + word13);
+                                finalWordlist.add(word5 + word11 + word12 + word13);
+                                finalWordlist.add(word5 + word11 + word13 + word12);
+                                finalWordlist.add(word5 + word12 + word11 + word13);
+                                finalWordlist.add(word5 + word12 + word13 + word11);
+                                finalWordlist.add(word5 + word13 + word11 + word12);
+                                finalWordlist.add(word5 + word13 + word12 + word11);
+
+                                finalWordlist.add(word11 + word5 + word12 + word13);
+                                finalWordlist.add(word11 + word5 + word12 + word13);
+                                finalWordlist.add(word11 + word5 + word13 + word12);
+                                finalWordlist.add(word12 + word5 + word11 + word13);
+                                finalWordlist.add(word12 + word5 + word13 + word11);
+                                finalWordlist.add(word13 + word5+ word11 + word12);
+                                finalWordlist.add(word13 + word5 + word12 + word11);
+
+                                finalWordlist.add(word11 + word12 + word5 + word13);
+                                finalWordlist.add(word11 + word12 + word5 + word13);
+                                finalWordlist.add(word11 + word13 + word5 + word12);
+                                finalWordlist.add(word12 + word11 + word5 + word13);
+                                finalWordlist.add(word12 + word13 + word5 + word11);
+                                finalWordlist.add(word13 + word11 + word5 + word12);
+                                finalWordlist.add(word13 + word12 + word5 + word11);
+
+                                finalWordlist.add(word11 + word12 + word13 + word5);
+                                finalWordlist.add(word11 + word12 + word13 + word5);
+                                finalWordlist.add(word11 + word13 + word12 + word5);
+                                finalWordlist.add(word12 + word11 + word13 + word5);
+                                finalWordlist.add(word12 + word13 + word11 + word5);
+                                finalWordlist.add(word13 + word11 + word12 + word5);
+                                finalWordlist.add(word13 + word12 + word11 + word5);
+                            });
+                        });
                     })
             );
 
