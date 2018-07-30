@@ -35,7 +35,7 @@ public class TechniqueColapseWords implements GenerateTechnique {
 
         List<String> finalWordlist = new ArrayList<>();
 
-        for (String word: wordlist) {
+        for (String word : wordlist) {
             switch (word.length()) {
                 case 1:
                     wordsLength1.add(word);
@@ -86,14 +86,14 @@ public class TechniqueColapseWords implements GenerateTechnique {
         if (wordsLength6.size() > 0 && wordsLength1.size() >= 2)
             wordsLength6.forEach(word6 ->
                     wordsLength1.forEach(word1Superior ->
-                        wordsLength1.forEach(word1Inferior -> {
-                            finalWordlist.add(word6 + word1Superior + word1Inferior);
-                            finalWordlist.add(word6 + word1Inferior + word1Superior);
-                            finalWordlist.add(word1Superior + word1Inferior + word6);
-                            finalWordlist.add(word1Inferior + word1Superior + word6);
-                            finalWordlist.add(word1Superior + word6 + word1Inferior);
-                            finalWordlist.add(word1Inferior + word6 + word1Superior);
-                        })
+                            wordsLength1.forEach(word1Inferior -> {
+                                finalWordlist.add(word6 + word1Superior + word1Inferior);
+                                finalWordlist.add(word6 + word1Inferior + word1Superior);
+                                finalWordlist.add(word1Superior + word1Inferior + word6);
+                                finalWordlist.add(word1Inferior + word1Superior + word6);
+                                finalWordlist.add(word1Superior + word6 + word1Inferior);
+                                finalWordlist.add(word1Inferior + word6 + word1Superior);
+                            })
                     )
             );
 
@@ -137,7 +137,7 @@ public class TechniqueColapseWords implements GenerateTechnique {
                                 finalWordlist.add(word11 + word5 + word13 + word12);
                                 finalWordlist.add(word12 + word5 + word11 + word13);
                                 finalWordlist.add(word12 + word5 + word13 + word11);
-                                finalWordlist.add(word13 + word5+ word11 + word12);
+                                finalWordlist.add(word13 + word5 + word11 + word12);
                                 finalWordlist.add(word13 + word5 + word12 + word11);
 
                                 finalWordlist.add(word11 + word12 + word5 + word13);
@@ -155,6 +155,219 @@ public class TechniqueColapseWords implements GenerateTechnique {
                                 finalWordlist.add(word12 + word13 + word11 + word5);
                                 finalWordlist.add(word13 + word11 + word12 + word5);
                                 finalWordlist.add(word13 + word12 + word11 + word5);
+                            });
+                        });
+                    })
+            );
+
+        if (wordsLength4.size() >= 2)
+            wordsLength4.forEach(word4_1 ->
+                    wordsLength4.forEach(word4_2 -> {
+                        finalWordlist.add(word4_1 + word4_2);
+                        finalWordlist.add(word4_2 + word4_1);
+                    })
+            );
+
+        if (wordsLength4.size() > 0 && wordsLength3.size() > 0 & wordsLength1.size() > 0)
+            wordsLength4.forEach(word4 ->
+                    wordsLength3.forEach(word3 -> {
+                        wordsLength1.forEach(word1 -> {
+                            finalWordlist.add(word4 + word3 + word1);
+                            finalWordlist.add(word4 + word1 + word3);
+
+                            finalWordlist.add(word3 + word4 + word1);
+                            finalWordlist.add(word1 + word4 + word3);
+
+                            finalWordlist.add(word3 + word1 + word4);
+                            finalWordlist.add(word1 + word3 + word4);
+                        });
+                    })
+            );
+
+        if (wordsLength4.size() > 0 && wordsLength2.size() >= 2)
+            wordsLength4.forEach(word4 ->
+                    wordsLength2.forEach(word2_1 -> {
+                        wordsLength2.forEach(word2_2 -> {
+                            finalWordlist.add(word4 + word2_1 + word2_2);
+                            finalWordlist.add(word4 + word2_2 + word2_1);
+
+                            finalWordlist.add(word2_2 + word4 + word2_1);
+                            finalWordlist.add(word2_1 + word4 + word2_2);
+
+                            finalWordlist.add(word2_2 + word2_1 + word4);
+                            finalWordlist.add(word2_1 + word2_2 + word4);
+                        });
+                    })
+            );
+
+        if (wordsLength4.size() > 0 && wordsLength2.size() > 0 && wordsLength1.size() >= 2)
+            wordsLength4.forEach(word4 ->
+                    wordsLength2.forEach(word2 -> {
+                        wordsLength1.forEach(word1_1 -> {
+                            wordsLength1.forEach(word1_2 -> {
+                                finalWordlist.add(word4 + word2 + word1_1 + word1_2);
+                                finalWordlist.add(word4 + word2 + word1_2 + word1_1);
+                                finalWordlist.add(word4 + word1_2 + word2 + word1_1);
+                                finalWordlist.add(word4 + word1_2 + word2 + word1_1);
+                                finalWordlist.add(word4 + word1_2 + word1_1 + word2);
+                                finalWordlist.add(word4 + word1_2 + word1_1 + word2);
+
+                                finalWordlist.add(word2 + word4 + word1_1 + word1_2);
+                                finalWordlist.add(word2 + word4 + word1_2 + word1_1);
+                                finalWordlist.add(word1_2 + word4 + word2 + word1_1);
+                                finalWordlist.add(word1_2 + word4 + word2 + word1_1);
+                                finalWordlist.add(word1_2 + word4 + word1_1 + word2);
+                                finalWordlist.add(word1_2 + word4 + word1_1 + word2);
+
+                                finalWordlist.add(word2 + word1_1 + word4 + word1_2);
+                                finalWordlist.add(word2 + word1_2 + word4 + word1_1);
+                                finalWordlist.add(word1_2 + word2 + word4 + word1_1);
+                                finalWordlist.add(word1_2 + word2 + word4 + word1_1);
+                                finalWordlist.add(word1_2 + word1_1 + word4 + word2);
+                                finalWordlist.add(word1_2 + word1_1 + word4 + word2);
+
+                                finalWordlist.add(word2 + word1_1 + word1_2 + word4);
+                                finalWordlist.add(word2 + word1_2 + word1_1 + word4);
+                                finalWordlist.add(word1_2 + word2 + word1_1 + word4);
+                                finalWordlist.add(word1_2 + word2 + word1_1 + word4);
+                                finalWordlist.add(word1_2 + word1_1 + word2 + word4);
+                                finalWordlist.add(word1_2 + word1_1 + word2 + word4);
+                            });
+                        });
+                    })
+            );
+
+        if (wordsLength4.size() > 0 && wordsLength1.size() >= 4)
+            wordsLength4.forEach(word4 ->
+                    wordsLength1.forEach(word1_1 -> {
+                        wordsLength1.forEach(word1_2 -> {
+                            wordsLength1.forEach(word1_3 -> {
+                                wordsLength1.forEach(word1_4 -> {
+                                    finalWordlist.add(word1_1 + word1_2 + word1_3 + word1_4 + word4);
+                                    finalWordlist.add(word1_1 + word1_2 + word1_3 + word4 + word1_4);
+                                    finalWordlist.add(word1_1 + word1_2 + word1_4 + word1_3 + word4);
+                                    finalWordlist.add(word1_1 + word1_2 + word1_4 + word4 + word1_3);
+                                    finalWordlist.add(word1_1 + word1_2 + word4 + word1_3 + word1_4);
+                                    finalWordlist.add(word1_1 + word1_2 + word4 + word1_4 + word1_3);
+                                    finalWordlist.add(word1_1 + word1_3 + word1_2 + word4 + word1_4);
+                                    finalWordlist.add(word1_1 + word1_3 + word1_2 + word1_4 + word4);
+                                    finalWordlist.add(word1_1 + word1_3 + word1_4 + word4 + word1_2);
+                                    finalWordlist.add(word1_1 + word1_3 + word1_4 + word1_2 + word4);
+                                    finalWordlist.add(word1_1 + word1_3 + word4 + word1_4 + word1_2);
+                                    finalWordlist.add(word1_1 + word1_3 + word4 + word1_2 + word1_4);
+                                    finalWordlist.add(word1_1 + word1_4 + word1_2 + word1_3 + word4);
+                                    finalWordlist.add(word1_1 + word1_4 + word1_2 + word4 + word1_3);
+                                    finalWordlist.add(word1_1 + word1_4 + word1_3 + word1_2 + word4);
+                                    finalWordlist.add(word1_1 + word1_4 + word1_3 + word4 + word1_2);
+                                    finalWordlist.add(word1_1 + word1_4 + word4 + word1_2 + word1_3);
+                                    finalWordlist.add(word1_1 + word1_4 + word4 + word1_3 + word1_2);
+                                    finalWordlist.add(word1_1 + word4 + word1_2 + word1_4 + word1_3);
+                                    finalWordlist.add(word1_1 + word4 + word1_2 + word1_3 + word1_4);
+                                    finalWordlist.add(word1_1 + word4 + word1_3 + word1_4 + word1_2);
+                                    finalWordlist.add(word1_1 + word4 + word1_3 + word1_2 + word1_4);
+                                    finalWordlist.add(word1_1 + word4 + word1_4 + word1_3 + word1_2);
+                                    finalWordlist.add(word1_1 + word4 + word1_4 + word1_2 + word1_3);
+
+                                    finalWordlist.add(word1_2 + word1_1 + word4 + word1_3 + word1_4);
+                                    finalWordlist.add(word1_2 + word1_1 + word4 + word1_4 + word1_3);
+                                    finalWordlist.add(word1_2 + word1_1 + word1_3 + word4 + word1_4);
+                                    finalWordlist.add(word1_2 + word1_1 + word1_3 + word1_4 + word4);
+                                    finalWordlist.add(word1_2 + word1_1 + word1_4 + word4 + word1_3);
+                                    finalWordlist.add(word1_2 + word1_1 + word1_4 + word1_3 + word4);
+                                    finalWordlist.add(word1_2 + word1_3 + word4 + word1_4 + word1_1);
+                                    finalWordlist.add(word1_2 + word1_3 + word4 + word1_1 + word1_4);
+                                    finalWordlist.add(word1_2 + word1_3 + word1_1 + word1_4 + word4);
+                                    finalWordlist.add(word1_2 + word1_3 + word1_1 + word4 + word1_4);
+                                    finalWordlist.add(word1_2 + word1_3 + word1_4 + word1_1 + word4);
+                                    finalWordlist.add(word1_2 + word1_3 + word1_4 + word4 + word1_1);
+                                    finalWordlist.add(word1_2 + word1_4 + word4 + word1_1 + word1_3);
+                                    finalWordlist.add(word1_2 + word1_4 + word4 + word1_3 + word1_1);
+                                    finalWordlist.add(word1_2 + word1_4 + word1_1 + word4 + word1_3);
+                                    finalWordlist.add(word1_2 + word1_4 + word1_1 + word1_3 + word4);
+                                    finalWordlist.add(word1_2 + word1_4 + word1_3 + word4 + word1_1);
+                                    finalWordlist.add(word1_2 + word1_4 + word1_3 + word1_1 + word4);
+                                    finalWordlist.add(word1_2 + word4 + word1_4 + word1_3 + word1_1);
+                                    finalWordlist.add(word1_2 + word4 + word1_4 + word1_1 + word1_3);
+                                    finalWordlist.add(word1_2 + word4 + word1_1 + word1_3 + word1_4);
+                                    finalWordlist.add(word1_2 + word4 + word1_1 + word1_4 + word1_3);
+                                    finalWordlist.add(word1_2 + word4 + word1_3 + word1_1 + word1_4);
+                                    finalWordlist.add(word1_2 + word4 + word1_3 + word1_4 + word1_1);
+
+                                    finalWordlist.add(word1_3 + word1_1 + word1_4 + word4 + word1_2);
+                                    finalWordlist.add(word1_3 + word1_1 + word1_4 + word1_2 + word4);
+                                    finalWordlist.add(word1_3 + word1_1 + word4 + word1_4 + word1_2);
+                                    finalWordlist.add(word1_3 + word1_1 + word4 + word1_2 + word1_4);
+                                    finalWordlist.add(word1_3 + word1_1 + word1_2 + word1_4 + word4);
+                                    finalWordlist.add(word1_3 + word1_1 + word1_2 + word4 + word1_4);
+                                    finalWordlist.add(word1_3 + word1_2 + word1_4 + word1_1 + word4);
+                                    finalWordlist.add(word1_3 + word1_2 + word1_4 + word4 + word1_1);
+                                    finalWordlist.add(word1_3 + word1_2 + word4 + word1_1 + word1_4);
+                                    finalWordlist.add(word1_3 + word1_2 + word4 + word1_4 + word1_1);
+                                    finalWordlist.add(word1_3 + word1_2 + word1_1 + word4 + word1_4);
+                                    finalWordlist.add(word1_3 + word1_2 + word1_1 + word1_4 + word4);
+                                    finalWordlist.add(word1_3 + word1_4 + word1_2 + word4 + word1_1);
+                                    finalWordlist.add(word1_3 + word1_4 + word1_2 + word1_1 + word4);
+                                    finalWordlist.add(word1_3 + word1_4 + word4 + word1_2 + word1_1);
+                                    finalWordlist.add(word1_3 + word1_4 + word4 + word1_1 + word1_2);
+                                    finalWordlist.add(word1_3 + word1_4 + word1_1 + word1_2 + word4);
+                                    finalWordlist.add(word1_3 + word1_4 + word1_1 + word4 + word1_2);
+                                    finalWordlist.add(word1_3 + word4 + word1_2 + word1_1 + word1_4);
+                                    finalWordlist.add(word1_3 + word4 + word1_2 + word1_4 + word1_1);
+                                    finalWordlist.add(word1_3 + word4 + word1_4 + word1_1 + word1_2);
+                                    finalWordlist.add(word1_3 + word4 + word1_4 + word1_2 + word1_1);
+                                    finalWordlist.add(word1_3 + word4 + word1_1 + word1_4 + word1_2);
+                                    finalWordlist.add(word1_3 + word4 + word1_1 + word1_2 + word1_4);
+
+                                    finalWordlist.add(word1_4 + word1_1 + word1_2 + word1_3 + word4);
+                                    finalWordlist.add(word1_4 + word1_1 + word1_2 + word4 + word1_3);
+                                    finalWordlist.add(word1_4 + word1_1 + word1_3 + word1_2 + word4);
+                                    finalWordlist.add(word1_4 + word1_1 + word1_3 + word4 + word1_2);
+                                    finalWordlist.add(word1_4 + word1_1 + word4 + word1_2 + word1_3);
+                                    finalWordlist.add(word1_4 + word1_1 + word4 + word1_3 + word1_2);
+                                    finalWordlist.add(word1_4 + word1_2 + word1_1 + word4 + word1_3);
+                                    finalWordlist.add(word1_4 + word1_2 + word1_1 + word1_3 + word4);
+                                    finalWordlist.add(word1_4 + word1_2 + word1_3 + word4 + word1_1);
+                                    finalWordlist.add(word1_4 + word1_2 + word1_3 + word1_1 + word4);
+                                    finalWordlist.add(word1_4 + word1_2 + word4 + word1_3 + word1_1);
+                                    finalWordlist.add(word1_4 + word1_2 + word4 + word1_1 + word1_3);
+                                    finalWordlist.add(word1_4 + word1_3 + word1_1 + word1_2 + word4);
+                                    finalWordlist.add(word1_4 + word1_3 + word1_1 + word4 + word1_2);
+                                    finalWordlist.add(word1_4 + word1_3 + word1_2 + word1_1 + word4);
+                                    finalWordlist.add(word1_4 + word1_3 + word1_2 + word4 + word1_1);
+                                    finalWordlist.add(word1_4 + word1_3 + word4 + word1_1 + word1_2);
+                                    finalWordlist.add(word1_4 + word1_3 + word4 + word1_2 + word1_1);
+                                    finalWordlist.add(word1_4 + word4 + word1_1 + word1_3 + word1_2);
+                                    finalWordlist.add(word1_4 + word4 + word1_1 + word1_2 + word1_3);
+                                    finalWordlist.add(word1_4 + word4 + word1_2 + word1_3 + word1_1);
+                                    finalWordlist.add(word1_4 + word4 + word1_2 + word1_1 + word1_3);
+                                    finalWordlist.add(word1_4 + word4 + word1_3 + word1_2 + word1_1);
+                                    finalWordlist.add(word1_4 + word4 + word1_3 + word1_1 + word1_2);
+
+                                    finalWordlist.add(word4 + word1_1 + word1_4 + word1_2 + word1_3);
+                                    finalWordlist.add(word4 + word1_1 + word1_4 + word1_3 + word1_2);
+                                    finalWordlist.add(word4 + word1_1 + word1_2 + word1_4 + word1_3);
+                                    finalWordlist.add(word4 + word1_1 + word1_2 + word1_3 + word1_4);
+                                    finalWordlist.add(word4 + word1_1 + word1_3 + word1_4 + word1_2);
+                                    finalWordlist.add(word4 + word1_1 + word1_3 + word1_2 + word1_4);
+                                    finalWordlist.add(word4 + word1_2 + word1_4 + word1_3 + word1_1);
+                                    finalWordlist.add(word4 + word1_2 + word1_4 + word1_1 + word1_3);
+                                    finalWordlist.add(word4 + word1_2 + word1_1 + word1_3 + word1_4);
+                                    finalWordlist.add(word4 + word1_2 + word1_1 + word1_4 + word1_3);
+                                    finalWordlist.add(word4 + word1_2 + word1_3 + word1_1 + word1_4);
+                                    finalWordlist.add(word4 + word1_2 + word1_3 + word1_4 + word1_1);
+                                    finalWordlist.add(word4 + word1_3 + word1_4 + word1_1 + word1_2);
+                                    finalWordlist.add(word4 + word1_3 + word1_4 + word1_2 + word1_1);
+                                    finalWordlist.add(word4 + word1_3 + word1_1 + word1_4 + word1_2);
+                                    finalWordlist.add(word4 + word1_3 + word1_1 + word1_2 + word1_4);
+                                    finalWordlist.add(word4 + word1_3 + word1_2 + word1_4 + word1_1);
+                                    finalWordlist.add(word4 + word1_3 + word1_2 + word1_1 + word1_4);
+                                    finalWordlist.add(word4 + word1_4 + word1_3 + word1_2 + word1_1);
+                                    finalWordlist.add(word4 + word1_4 + word1_3 + word1_1 + word1_2);
+                                    finalWordlist.add(word4 + word1_4 + word1_1 + word1_2 + word1_3);
+                                    finalWordlist.add(word4 + word1_4 + word1_1 + word1_3 + word1_2);
+                                    finalWordlist.add(word4 + word1_4 + word1_2 + word1_1 + word1_3);
+                                    finalWordlist.add(word4 + word1_4 + word1_2 + word1_3 + word1_1);
+                                });
                             });
                         });
                     })

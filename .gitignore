@@ -1,4 +1,6 @@
 .idea/
 target/
+
 sgd-generateWordlist.iml
+export.txt
 
