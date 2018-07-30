@@ -5,17 +5,21 @@ import java.util.List;
 
 public class ExportFile implements ExportManager {
 
-    private final String FILE_NAME = "export.txt";
+    private final String FILE_NAME;
 
     public ExportFile() throws IOException {
-        File file = new File(FILE_NAME);
+        this.FILE_NAME = "export.txt";
+
+        File file = new File(this.FILE_NAME);
 
         if (!file.exists())
             file.createNewFile();
     }
 
-    public ExportFile(String userFileName) throws IOException {
-        File file = new File(userFileName);
+    public ExportFile(String fileName) throws IOException {
+        this.FILE_NAME = fileName;
+
+        File file = new File(this.FILE_NAME);
 
         if (!file.exists())
             file.createNewFile();
