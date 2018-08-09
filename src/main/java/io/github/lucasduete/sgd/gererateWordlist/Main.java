@@ -1,6 +1,7 @@
 package io.github.lucasduete.sgd.gererateWordlist;
 
 import io.github.lucasduete.sgd.gererateWordlist.core.GenerateTechnique;
+import io.github.lucasduete.sgd.gererateWordlist.core.TechniqueColapseWordlistsWithPadding;
 import io.github.lucasduete.sgd.gererateWordlist.core.TechniqueColapseWords;
 import io.github.lucasduete.sgd.gererateWordlist.exports.ExportFile;
 import io.github.lucasduete.sgd.gererateWordlist.exports.ExportManager;
@@ -12,7 +13,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-        GenerateTechnique generateTechnique = new TechniqueColapseWords();
+        GenerateTechnique generateTechnique = new TechniqueColapseWordlistsWithPadding();
 
         List<String> wordlist = generateTechnique.generateWordlist();
 
