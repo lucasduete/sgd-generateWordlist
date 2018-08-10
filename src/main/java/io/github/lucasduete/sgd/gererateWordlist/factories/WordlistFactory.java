@@ -45,14 +45,12 @@ public class WordlistFactory {
     private String readFileContent(InputStream in) throws IOException {
 
         ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
-        int readed = 0;
+        byte[] byteArray = new byte[1];
 
-        do {
-
-            byte[] byteArray = new byte[1];
-            readed = in.read(byteArray);
+        while(in.read(byteArray) != -1) {
             byteOutputStream.write(byteArray);
-        } while(readed != -1);
+            byteArray = new byte[1];
+        }
 
         byte[] resulting = byteOutputStream.toByteArray();
 
